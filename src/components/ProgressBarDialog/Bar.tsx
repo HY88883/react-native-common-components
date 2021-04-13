@@ -35,7 +35,6 @@ class Bar extends PureComponent<IBar> {
   update(progress) {
     Animated.spring(this.progress, {
       toValue: progress,
-        easing:Bar.defaultProps.easing,
         useNativeDriver:true
     }).start();
   }

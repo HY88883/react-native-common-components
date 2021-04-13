@@ -17,7 +17,7 @@ const {
 } = Dimensions.get('window');
 
 interface  IProgressBarDialog {
-    animationType?: string;
+    animationType?: 'none' | 'slide' | 'fade';
     transparent?: boolean;
     progressModalVisible: boolean;
     onShow?: () => {};

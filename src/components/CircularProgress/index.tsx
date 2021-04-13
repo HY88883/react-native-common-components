@@ -19,6 +19,7 @@ const CircularProgress=(props:ICircularProgress)=>{
     console.log('CircularProgress'+visible)
     return (
         <Modal
+            hardwareAccelerated
             animationType={'slide'}
             transparent={false}
             onRequestClose={()=>{}}

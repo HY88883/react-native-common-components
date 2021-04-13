@@ -12,6 +12,10 @@ const FileTypes = [
     DocumentPicker.types.images,
 ];
 
+/**
+ * 本地文件选择器
+ */
+
 let MyDocumentPicker = {
     // Pick a single file
     pickerSingleFile: (callback:(value:any)=>void, errorCallback:(value:any)=>void) => {

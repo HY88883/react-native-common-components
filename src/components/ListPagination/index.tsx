@@ -87,7 +87,7 @@ class ListPagination extends PureComponent<
 
   onRefresh = () => {
       const {pageParams,refresh} = this.props;
-      this.pageParams = {...pageParams} || {...ListPagination.defaultProps.pageParams};
+      this.pageParams = {...pageParams};
       this.isNew = true;
     this.setState({isFirstLoading: true});
     refresh(this.callBack, this.pageParams);

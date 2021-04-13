@@ -8,6 +8,11 @@ interface IDivider{
     type?:'horizontal'|'vertical';
 }
 
+/**
+ * 分割线
+ * @param props
+ * @constructor
+ */
 const Divider=(props:IDivider)=>{
     let {lineHeight, color, style,type} = props;
     switch (type) {

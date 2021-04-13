@@ -10,7 +10,7 @@ import RNFS from 'react-native-fs';
 // @ts-ignore
 import {ActionPopover,Menu} from 'teaset'
 
-interface Idata{
+export interface Idata{
     link:string;
     domain:string;
     name:string;
@@ -60,13 +60,16 @@ export async function mkDir(defaultPath: string) {
 }
 
 
-const headersOptions = {
-    Accept: 'application/json',
+export const headersOptions = {
+    Accept: '*/*',
     Authorization: 'Basic c3dvcmQ6c3dvcmRfc2VjcmV0',
     'Content-Type': 'multipart/form-data',
     'Blade-Auth':
-        'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJkZXRhaWwiOnsidHlwZSI6IndlYiJ9LCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjEzNjQwNTI0NjMxMzI4MTk0NTgiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzd29yZCIsImV4cCI6MTYxNzE3MzA3MiwibmJmIjoxNjE3MDg2NjcyfQ.DFw1T7SobRgtHYly1-q-Tb6WNUV_zuoHQYfIpI8pxURGR5r8NT5QUKd0t8hW1aYoGbdHZWadHWFS5EcmPu0xrA',
+    'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MTc3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODE2NzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiY2p6biIsIm5pY2tfbmFtZSI6IueuoeeQhuWRmCIsImRldGFpbCI6eyJ0eXBlIjoid2ViIn0sInRva2VuX3R5cGUiOiJhY2Nlc3NfdG9rZW4iLCJkZXB0X2lkIjoiMTM2NDA1MjQ2MzEzMjgxOTQ1OCIsImFjY291bnQiOiJjanpuIiwiY2xpZW50X2lkIjoic3dvcmQiLCJleHAiOjE2MTg0MDQ2OTAsIm5iZiI6MTYxODMxODI5MH0.hnXRINNlgGyLE3AVV0anY6sn1w5yLAp9tdOcr70x14xixPEK_FCij-QdpcmoivnXzEMnMNTgxWoG8IyrMsDe7A'
 };
+
+export const uploadUrl =
+    'http://li.yunlink.win:16995/api/blade-resource/oss/endpoint/put-file-attach';
 
 /**
  * 上传
@@ -110,9 +113,6 @@ class Upload extends PureComponent<IUpload, IUploadState> {
                 }
             }
         }
-
-        let uploadUrl =
-            'http://li.yunlink.win:16995/api/blade-resource/oss/endpoint/put-file-attach';
 
         const formData = new FormData();
         formData.append('file', picker);

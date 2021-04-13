@@ -1,0 +1,75 @@
+import React, {Component} from 'react';
+import {Image, StyleSheet, Text, View,} from 'react-native';
+import {Grid, Provider} from '@ant-design/react-native';
+import MyDocumentPicker from '@/components/MyDocumentPicker';
+import Upload from '@/components/Upload';
+import Touchable from "@/components/Touchable";
+import MyImagePicker from "@/components/MyImagePicker";
+import ImagePickerComponent from "@/components/MyImagePicker";
+import {scaleSizeH, wp} from "@/utils/index";
+import MyGrid from "@/components/MyGrid";
+
+const data = Array.from(new Array(6)).map((_val, i) => ({
+  iconx: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+  text: `Name${i}`,
+}));
+
+class App extends Component {
+  state = {
+    fill: 0,
+    visible: false,
+  };
+
+  componentDidMount(): void {
+  }
+
+  onPress =  () => {
+    MyDocumentPicker.pickerSingleFile(
+      async value => {
+          console.log(value)
+
+      },null)
+  };
+
+  render() {
+      console.log(this.state)
+    return (
+      <Provider>
+        <View style={{flex: 1,justifyContent:'center'}}>
+          <MyGrid data={data} containerStyle={{width :wp(90)}}/>
+        </View>
+      </Provider>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+  loading: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%',
+    zIndex: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+export default App;

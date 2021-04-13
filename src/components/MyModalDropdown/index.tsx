@@ -17,6 +17,11 @@ interface ModalDropdownProps {
   adjustFrame?: (frameValue: frame) => frame;
 }
 
+/**
+ * 下拉选择框
+ * @param props
+ * @constructor
+ */
 const MyModalDropdown=(props:ModalDropdownProps)=>{
   const {children, options, onSelect,dropdownTextStyle,dropdownTextHighlightStyle,dropdownStyle,adjustFrame} = props;
   return (

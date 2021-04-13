@@ -19,6 +19,9 @@ interface IMyDatePickerState {
 
 }
 
+/**
+ * 日期选择器
+ */
 class MyDatePicker extends PureComponent<IMyDatePicker,IMyDatePickerState> {
 
     static defaultProps = {

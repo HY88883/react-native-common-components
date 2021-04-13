@@ -80,8 +80,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    width:scaleSizeW(25),
-    height:scaleSizeW(25)
   },
   textStyle: {
     fontSize: setSpText(14),

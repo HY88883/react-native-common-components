@@ -12,6 +12,11 @@ interface IMyCheckbox {
     onChange?: (checked: boolean,item:object,index:number) => void;
 }
 
+/**
+ * 多选按钮
+ * @param props
+ * @constructor
+ */
 const MyCheckbox = (props: IMyCheckbox) => {
     const {list,keyIndex,titleIndex,checkboxStyle,onChange}=props
     return (

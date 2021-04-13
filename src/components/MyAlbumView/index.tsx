@@ -101,9 +101,8 @@ class MyAlbumView extends PureComponent<IMyAlbumView> {
             }}
             backgroundColor={'#666'}
             useNativeDriver
-            onSave={url => {
-              console.log('x===========');
-            }}
+           /* onSave={url => {
+            }}*/
           />
         </Modal>
       </View>

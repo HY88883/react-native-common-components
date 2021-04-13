@@ -65,7 +65,7 @@ class Carrousel extends PureComponent<ICarrousel,ICarrouselState> {
     render() {
         const {data}=this.props
         return (
-            <View style={{ marginTop: scaleSizeH(0) }}>
+            <>
                 <SnapCarousel
                     data={data}
                     renderItem={this.renderItem}
@@ -77,7 +77,7 @@ class Carrousel extends PureComponent<ICarrousel,ICarrouselState> {
                     autoplay
                 />
                 {this.pagination}
-            </View>
+            </>
         );
     }
 }
@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     paginationContainer: {
-        position: 'absolute',
         top: -scaleSizeH(20),
         backgroundColor: 'rgba(0,0,0,0.35)',
         paddingHorizontal: scaleSizeW(3),

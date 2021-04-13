@@ -1,13 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React, {Component, PureComponent} from 'react';
 import {
     Alert,
@@ -36,7 +26,6 @@ import ListPagination from "@/components/ListPagination";
 import StepIndicator from 'react-native-step-indicator';
 import {StepIndicatorStyles} from "react-native-step-indicator/lib/typescript/src/types";
 
-
 interface IMyStepIndicator {
     labels:Array<any>;
     stepCount:number;
@@ -53,7 +42,7 @@ const MyStepIndicator=(props:IMyStepIndicator)=>{
     return (
         <StepIndicator
             stepCount={stepCount}
-            customStyles={[MyStepIndicator.defaultProps.customStyles, customStyles]}
+      customStyles={customStyles}
             currentPosition={currentPosition}
             direction={direction}
             labels={labels}
